@@ -4,7 +4,7 @@ function Yoonseop() {
     let [like,setLike] = useState(0)
     return (
         <div>
-            <div>김윤섭의 페이지</div>
+            <div>김윤섭의 페이지0329 변경</div>
             <div>{like}</div>
             <button onClick={()=>{
                 setLike(like+=1)
