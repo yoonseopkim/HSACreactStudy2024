@@ -20,7 +20,7 @@ function App() {
           </h4>
         </div>
         <nav>
-          <h1>asdasd</h1>
+          <h1>asdassd</h1>
           {/* <Link to="/Home">Home</Link>
           <Link to="/Junig">Junig</Link>
           <Link to="/Counter">Counter</Link>
