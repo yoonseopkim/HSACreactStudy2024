@@ -12,15 +12,7 @@ import {Routes, Route, Link} from "react-router-dom";
 function App() {
     return(
       <div className="App">
-        <div class="list">
-          <h4>
-            hotel california <button>delete</button> 
-            <br/>
-            <button>가나다순 정렬</button> <span>좋아요</span>
-          </h4>
-        </div>
         <nav>
-          <h1>asdassd</h1>
           {/* <Link to="/Home">Home</Link>
           <Link to="/Junig">Junig</Link>
           <Link to="/Counter">Counter</Link>
