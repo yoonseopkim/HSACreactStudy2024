@@ -15,6 +15,8 @@ function App() {
   const createNew = () => {
     const title = document.getElementById("new_title");
     const titleValue = title.value;
+    글제목[cnt] = titleValue;
+    cnt++;
     const output = document.getElementById("output");
     output.textContent = titleValue;
   }
