@@ -7,6 +7,8 @@ function App() {
   let post = 'react blog';
   let [글제목, 글제목변경] = useState(['남자 코트 추천', '강남 우동 맛집', '파이썬 독학']);
   let [따봉, 따봉변경] = useState(0);
+  let [새글제목,새글제목함수] = useState(['']);
+  let cnt = 0;
 
   function 함수(){
     console.log(1);
@@ -15,10 +17,9 @@ function App() {
   const createNew = () => {
     const title = document.getElementById("new_title");
     const titleValue = title.value;
-    글제목[cnt] = titleValue;
+    let titleList = [...새글제목];
+    titleList[cnt] = titleValue;
     cnt++;
-    const output = document.getElementById("output");
-    output.textContent = titleValue;
   }
 
   return (
