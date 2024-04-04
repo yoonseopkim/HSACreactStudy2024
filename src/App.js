@@ -4,9 +4,9 @@
 // import Input from "./Input";
 // import Input2 from "./Input2";
 // import UserList from "./UserList";
-import Junig from "./Junig";
+// import Junig from "./Junig"; 이거 코드 오타
 import './App.css';
-
+import Junig from "./junig";
 import {useState} from "react";
 import React from "react";
 import Yoonseop from "./Pages/Yoonseop";
