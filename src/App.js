@@ -1,52 +1,69 @@
-// import Junig from "./Junig"
-// import Home from "./Home"
-// import Counter from "./Counter"
-// import Input from "./Input";
-// import Input2 from "./Input2";
-// import UserList from "./UserList";
-// import Junig from "./Junig"; 이거 코드 오타
+import logo from './logo.svg';
 import './App.css';
-import Junig from "./junig";
-import {useState} from "react";
-import React from "react";
-import Yoonseop from "./Pages/Yoonseop";
-import {Routes, Route, Link} from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css'; //전역 부트스트랩 css 파일 설면
+import { useState } from 'react';
+
 function App() {
-    let [post,setPost] = useState('안녕')
-    let [like,setLike] = useState(0)
+
+  let post = 'react blog';
+  let [글제목, 글제목변경] = useState(['남자 코트 추천', '강남 우동 맛집', '파이썬 독학']);
+  let [따봉, 따봉변경] = useState(0);
+  let [새글제목,새글제목함수] = useState(['']);
+  let cnt = 0;
+
+  function 함수(){
+    console.log(1);
+  }
+
+  const createNew = () => {
+    const title = document.getElementById("new_title");
+    const titleValue = title.value;
+    let titleList = [...새글제목];
+    titleList[cnt] = titleValue;
+    cnt++;
+  }
 
   return (
-      <div className="App">
-  <nav>
-          {/* <Link to="/Home">Home</Link>
-          <Link to="/Junig">Junig</Link>
-          <Link to="/Counter">Counter</Link>
-          <Link to="/Input">Input</Link>
-          <Link to="/Input2">Input2</Link>
-          <Link to="UserList">UserList</Link> */}
-          <Link to="/Junig">Junig</Link>
-        </nav>
-
-    
-          <Routes>
-              {/* 공모페이지 */}
-              {/* 나의 펀딩 현황 */}
-              {/*<Route path="/주소창에쓸 경로" element={< 만든 컴포넌트 이름/>} />*/}
-              <Route path="/yoonseop" element={< Yoonseop/>} />
-    {/* <Route path="/Junig" element={<Junig />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Counter" element={<Counter/>}/>
-            <Route path="/Input" element={<Input/>}/>
-            <Route path="/Input2" element={<Input2/>}/>
-            <Route path="/UserList" element={<UserList/>}/> */}
-            <Route path="/Junig" element={<Junig/>}/>
-              </Routes>
-       
+    <div className="App">
+      <div className='black-nav'>
+        <h4 style={{color:'red', fontSize : '16px'}}>{post}</h4>
       </div>
 
-  );
+      <input type='text' id='new_title' />
+      <button onClick={createNew}>글발행</button>
+      <div id='output'></div>
 
+      <button onClick={() => {
+        let copy = [...글제목];
+        copy[0] = "여자 코트 추천";
+        글제목변경(copy);
+      }}>글수정</button>
+
+      <div className='list'>
+        <h4>{글제목[0]} <span onClick={ () => { 따봉변경(따봉 + 1) } }>👍</span> { 따봉 } </h4>
+        <p>2월 17일 발행</p>
+      </div>
+      <div className='list'>
+        <h4>{글제목[1]} <span onClick={ () => { 따봉변경(따봉 + 1) } }>👍</span> { 따봉 }</h4>
+        <p>2월 17일 발행</p>
+      </div>
+      <div className='list'>
+        <h4>{글제목[2]} <span onClick={ () => { 따봉변경(따봉 + 1) } }>👍</span> { 따봉 }</h4>
+        <p>2월 17일 발행</p>
+      </div>
+      <Modal></Modal>
+    </div>
+    
+  );
+}
+
+function Modal(){
+    return (
+      <div className='modal'>
+        <h4>제목</h4>
+        <p>날짜</p>
+        <p>상세내용</p>
+      </div>
+    )
 }
 
 export default App;
